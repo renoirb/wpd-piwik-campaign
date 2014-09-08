@@ -16,6 +16,16 @@
 
 header('Cache-Control: no-store, no-cache, must-revalidate');
 
+// Since we did not mention the 'h' GET parameter
+// specifying the it is assumed we want to include
+// the form in the current document, therefore
+// we will provide it right here. The manager will
+// handle the rest.
+if(!isset($_GET['h'])) {
+  header("Content-type: text/javascript");
+  die(file_get_contents('include.js'));
+}
+
 /**
  * List domain names that are allowed to be accessed cross-origin
  *
