@@ -8,37 +8,13 @@
  * pages.
  *
  * [0]: https://piwik.org/docs/tracking-campaigns/url-builder/
- **/
-
-$headers = getallheaders();
-if(strpos($headers['Accept'],'html')) {
-  header("location: use.html");
-}
-
-// Since we did not mention the 'h' GET parameter
-// specifying the it is assumed we want to include
-// the form in the current document, therefore
-// we will provide it right here. The manager will
-// handle the rest.
-if(!isset($_GET['h'])) {
-  header("Content-type: text/javascript");
-  die(file_get_contents('assets/main.js'));
-}
-
-/* ************************ CORS ************************ */
-
-/**
- * CORS header manipulation handler
- *
- * This utility will add header in the
- * HTTP response and help us execute JavaScript
- * from differen sub-domains.
  *
  * canonical: https://gist.github.com/renoirb/6991866
  *
  * @author  Renoir Boulanger <renoir@w3.org>
  **/
 
+header('Cache-Control: no-store, no-cache, must-revalidate');
 
 /**
  * List domain names that are allowed to be accessed cross-origin
@@ -92,7 +68,7 @@ if($allowed_referer_pass === FALSE || $allowed_hostname === FALSE){
   <option value="GuestPost" />
   <option value="InPerson" />
 </datalist>
-<script src="<?php echo PROTOCOL.'://'.HOST; ?>/campaign/assets/generateurl.js"></script>
+<script src="<?php echo '//'.HOST; ?>/campaign/assets/generateurl.js"></script>
 <form name="urlBuilder">
   <table>
     <tbody>

@@ -15,7 +15,7 @@
  *
  * Bookmarklet:
  * {code}
- *   javascript:(function(){var%20d=document,g=d.createElement('script'),s=d.getElementsByTagName('script')[0];g.type='text/javascript';g.defer=true;g.async=true;g.src='http://www.webplatform.org/campaign/';s.parentNode.insertBefore(g,s);})();
+ *   javascript:(function(){var%20d=document,g=d.createElement('script'),s=d.getElementsByTagName('script')[0];g.type='text/javascript';g.defer=true;g.async=true;g.src='//www.webplatform.org/campaign/include.js';s.parentNode.insertBefore(g,s);})();
  * {code}
  */
 var d=document,
@@ -25,5 +25,5 @@ var d=document,
     g.type='text/javascript';
     g.defer=true;
     g.async=true;
-    g.src='http://www.webplatform.org/campaign/';
+    g.src='//www.webplatform.org/campaign/include.js';
     s.parentNode.insertBefore(g,s);

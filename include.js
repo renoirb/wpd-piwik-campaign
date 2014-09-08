@@ -1,7 +1,7 @@
 var campaignManager = (function(){
 
-  const JQUERYFILE = 'http://docs.webplatform.org/w/resources/jquery/jquery.js';
-  const AJAXENDPOINT = 'http://www.webplatform.org/campaign/';
+  const JQUERYFILE = '//www.webplatform.org/assets/bower_components/jquery/jquery.min.js';
+  const AJAXENDPOINT = '//www.webplatform.org/campaign/';
 
   var domainName = document.documentURI.match(/\w+\.webplatform\.org/)[0],
       today = new Date(),
